@@ -52,9 +52,10 @@ def on_message(client, userdata, msg):
 
 
 client = mqtt.Client()
+client.username_pw_set(username="fan-mqtt-broker", password="raspberry")
 client.on_connect = on_connect
 client.on_message = on_message
 
-client.connect("192.168.1.46", 1883, 60)
+client.connect("84.97.28.206:5003", 1883, 60)
 
 client.loop_forever()
